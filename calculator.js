@@ -24,3 +24,29 @@ function getInputValues() {
     const number2 = parseFloat(document.getElementById('number2').value) || 0;
     return { number1, number2 };
 }
+
+// Update result display
+function updateResult(value) {
+    document.getElementById('calculation-result').textContent = value;
+}
+
+// Event listeners for buttons
+document.getElementById('add').addEventListener('click', function () {
+    const { number1, number2 } = getInputValues();
+    updateResult(add(number1, number2));
+});
+
+document.getElementById('subtract').addEventListener('click', function () {
+    const { number1, number2 } = getInputValues();
+    updateResult(subtract(number1, number2));
+});
+
+document.getElementById('multiply').addEventListener('click', function () {
+    const { number1, number2 } = getInputValues();
+    updateResult(multiply(number1, number2));
+});
+
+document.getElementById('divide').addEventListener('click', function () {
+    const { number1, number2 } = getInputValues();
+    updateResult(divide(number1, number2));
+});
